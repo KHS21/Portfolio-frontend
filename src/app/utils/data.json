@@ -1,0 +1,218 @@
+[
+  {
+    "name": "TCS",
+    "symbol": "TCS.NS",
+    "purchasePrice": 684.65,
+    "qty": 10,
+    "exchange": "NSE",
+    "sector": "Technology"
+  },
+  {
+    "name": "INFY",
+    "symbol": "INFY.NS",
+    "purchasePrice": 3287.42,
+    "qty": 8,
+    "exchange": "NSE",
+    "sector": "Technology"
+  },
+  {
+    "name": "WIPRO",
+    "symbol": "WIPRO.NS",
+    "purchasePrice": 367.69,
+    "qty": 7,
+    "exchange": "NSE",
+    "sector": "Technology"
+  },
+  {
+    "name": "HCLTECH",
+    "symbol": "HCLTECH.NS",
+    "purchasePrice": 2477.7,
+    "qty": 10,
+    "exchange": "NSE",
+    "sector": "Technology"
+  },
+  {
+    "name": "TECHM",
+    "symbol": "TECHM.NS",
+    "purchasePrice": 2402.4,
+    "qty": 9,
+    "exchange": "NSE",
+    "sector": "Technology"
+  },
+  {
+    "name": "LTIM",
+    "symbol": "LTIM.NS",
+    "purchasePrice": 1431.26,
+    "qty": 3,
+    "exchange": "NSE",
+    "sector": "Technology"
+  },
+  {
+    "name": "RELIANCE",
+    "symbol": "RELIANCE.NS",
+    "purchasePrice": 3112.25,
+    "qty": 17,
+    "exchange": "NSE",
+    "sector": "Energy"
+  },
+  {
+    "name": "ONGC",
+    "symbol": "ONGC.NS",
+    "purchasePrice": 886.2,
+    "qty": 4,
+    "exchange": "NSE",
+    "sector": "Energy"
+  },
+  {
+    "name": "BPCL",
+    "symbol": "BPCL.NS",
+    "purchasePrice": 1550.65,
+    "qty": 14,
+    "exchange": "NSE",
+    "sector": "Energy"
+  },
+  {
+    "name": "NTPC",
+    "symbol": "NTPC.NS",
+    "purchasePrice": 1056.51,
+    "qty": 14,
+    "exchange": "NSE",
+    "sector": "Energy"
+  },
+  {
+    "name": "SBIN",
+    "symbol": "SBIN.NS",
+    "purchasePrice": 2758.06,
+    "qty": 18,
+    "exchange": "NSE",
+    "sector": "Financials"
+  },
+  {
+    "name": "HDFCBANK",
+    "symbol": "HDFCBANK.NS",
+    "purchasePrice": 890.98,
+    "qty": 11,
+    "exchange": "NSE",
+    "sector": "Financials"
+  },
+  {
+    "name": "ICICIBANK",
+    "symbol": "ICICIBANK.NS",
+    "purchasePrice": 943.63,
+    "qty": 6,
+    "exchange": "NSE",
+    "sector": "Financials"
+  },
+  {
+    "name": "AXISBANK",
+    "symbol": "AXISBANK.NS",
+    "purchasePrice": 1023.45,
+    "qty": 12,
+    "exchange": "NSE",
+    "sector": "Financials"
+  },
+  {
+    "name": "KOTAKBANK",
+    "symbol": "KOTAKBANK.NS",
+    "purchasePrice": 768.1,
+    "qty": 12,
+    "exchange": "NSE",
+    "sector": "Financials"
+  },
+  {
+    "name": "SUNPHARMA",
+    "symbol": "SUNPHARMA.NS",
+    "purchasePrice": 709.52,
+    "qty": 16,
+    "exchange": "NSE",
+    "sector": "Pharma"
+  },
+  {
+    "name": "CIPLA",
+    "symbol": "CIPLA.NS",
+    "purchasePrice": 2526.23,
+    "qty": 9,
+    "exchange": "NSE",
+    "sector": "Pharma"
+  },
+  {
+    "name": "DRREDDY",
+    "symbol": "DRREDDY.NS",
+    "purchasePrice": 1648.3,
+    "qty": 12,
+    "exchange": "NSE",
+    "sector": "Pharma"
+  },
+  {
+    "name": "DIVISLAB",
+    "symbol": "DIVISLAB.NS",
+    "purchasePrice": 1834.44,
+    "qty": 15,
+    "exchange": "NSE",
+    "sector": "Pharma"
+  },
+  {
+    "name": "AUROPHARMA",
+    "symbol": "AUROPHARMA.NS",
+    "purchasePrice": 439.94,
+    "qty": 2,
+    "exchange": "NSE",
+    "sector": "Pharma"
+  },
+  {
+    "name": "TATAMOTORS",
+    "symbol": "TATAMOTORS.NS",
+    "purchasePrice": 2562.74,
+    "qty": 18,
+    "exchange": "NSE",
+    "sector": "Auto"
+  },
+  {
+    "name": "MARUTI",
+    "symbol": "MARUTI.NS",
+    "purchasePrice": 3357.94,
+    "qty": 4,
+    "exchange": "NSE",
+    "sector": "Auto"
+  },
+  {
+    "name": "M&M",
+    "symbol": "M&M.NS",
+    "purchasePrice": 2989.23,
+    "qty": 11,
+    "exchange": "NSE",
+    "sector": "Auto"
+  },
+  {
+    "name": "BAJAJ-AUTO",
+    "symbol": "BAJAJ-AUTO.NS",
+    "purchasePrice": 628.95,
+    "qty": 12,
+    "exchange": "NSE",
+    "sector": "Auto"
+  },
+  {
+    "name": "HEROMOTOCO",
+    "symbol": "HEROMOTOCO.NS",
+    "purchasePrice": 1169.32,
+    "qty": 15,
+    "exchange": "NSE",
+    "sector": "Auto"
+  },
+  {
+    "name": "EICHERMOT",
+    "symbol": "EICHERMOT.NS",
+    "purchasePrice": 2154.29,
+    "qty": 7,
+    "exchange": "NSE",
+    "sector": "Auto"
+  },
+  {
+    "name": "TVSMOTOR",
+    "symbol": "TVSMOTOR.NS",
+    "purchasePrice": 1363.46,
+    "qty": 4,
+    "exchange": "NSE",
+    "sector": "Auto"
+  }
+]
