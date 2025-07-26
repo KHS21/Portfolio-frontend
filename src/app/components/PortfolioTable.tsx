@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { fetchStockData } from "../utils/api";
 import {
   PieChart,
@@ -46,7 +46,7 @@ export default function PortfolioTable({ data }: { data: Stock[] }) {
   const [intervalMs, setIntervalMs] = useState(15000);
   const [showGainers, setShowGainers] = useState<boolean | null>(null);
 
-  const updateLiveData = async () => {
+  const updateLiveData = useCallback(async () => {
     const updates: Record<string, LiveData> = {};
     await Promise.all(
       data.map(async (stock) => {
@@ -63,13 +63,13 @@ export default function PortfolioTable({ data }: { data: Stock[] }) {
       })
     );
     setLiveData(updates);
-  };
+  }, [data]); // Add any dependencies used inside the function (like `data`)
 
   useEffect(() => {
     updateLiveData();
     const interval = setInterval(updateLiveData, intervalMs);
     return () => clearInterval(interval);
-  }, [intervalMs]);
+  }, [updateLiveData, intervalMs]);
 
   const filteredStocks = data.filter((stock) => {
     const match =
@@ -97,10 +97,7 @@ export default function PortfolioTable({ data }: { data: Stock[] }) {
   );
 
   const sectorData = Object.entries(grouped).map(([sector, stocks]) => {
-    const total = stocks.reduce(
-      (sum, s) => sum + s.qty * s.purchasePrice,
-      0
-    );
+    const total = stocks.reduce((sum, s) => sum + s.qty * s.purchasePrice, 0);
     return { sector, investment: total };
   });
 
@@ -137,13 +134,22 @@ export default function PortfolioTable({ data }: { data: Stock[] }) {
           <option value={60000}>1 min</option>
         </select>
         <div className="flex gap-2 items-center">
-          <button onClick={() => setShowGainers(null)} className="px-3 py-1 border rounded">
+          <button
+            onClick={() => setShowGainers(null)}
+            className="px-3 py-1 border rounded"
+          >
             All
           </button>
-          <button onClick={() => setShowGainers(true)} className="px-3 py-1 border rounded text-green-600">
+          <button
+            onClick={() => setShowGainers(true)}
+            className="px-3 py-1 border rounded text-green-600"
+          >
             Gainers
           </button>
-          <button onClick={() => setShowGainers(false)} className="px-3 py-1 border rounded text-red-600">
+          <button
+            onClick={() => setShowGainers(false)}
+            className="px-3 py-1 border rounded text-red-600"
+          >
             Losers
           </button>
         </div>
@@ -203,12 +209,20 @@ export default function PortfolioTable({ data }: { data: Stock[] }) {
                   <th className="px-4 py-3 font-semibold">Stock</th>
                   <th className="px-4 py-3 font-semibold text-center">Qty</th>
                   <th className="px-4 py-3 font-semibold text-right">Buy ₹</th>
-                  <th className="px-4 py-3 font-semibold text-right">Invested</th>
+                  <th className="px-4 py-3 font-semibold text-right">
+                    Invested
+                  </th>
                   <th className="px-4 py-3 font-semibold text-right">CMP</th>
-                  <th className="px-4 py-3 font-semibold text-right">Present</th>
-                  <th className="px-4 py-3 font-semibold text-right">Gain/Loss</th>
+                  <th className="px-4 py-3 font-semibold text-right">
+                    Present
+                  </th>
+                  <th className="px-4 py-3 font-semibold text-right">
+                    Gain/Loss
+                  </th>
                   <th className="px-4 py-3 font-semibold text-center">P/E</th>
-                  <th className="px-4 py-3 font-semibold text-center">Earnings</th>
+                  <th className="px-4 py-3 font-semibold text-center">
+                    Earnings
+                  </th>
                   <th className="px-4 py-3 font-semibold text-right">%</th>
                 </tr>
               </thead>
@@ -219,7 +233,10 @@ export default function PortfolioTable({ data }: { data: Stock[] }) {
                   const cmp = live?.cmp || 0;
                   const present = cmp * stock.qty;
                   const gain = present - investment;
-                  const percent = ((investment / totalInvestment) * 100).toFixed(2);
+                  const percent = (
+                    (investment / totalInvestment) *
+                    100
+                  ).toFixed(2);
 
                   return (
                     <tr
@@ -228,15 +245,29 @@ export default function PortfolioTable({ data }: { data: Stock[] }) {
                     >
                       <td className="px-4 py-2 font-medium">{stock.name}</td>
                       <td className="px-4 py-2 text-center">{stock.qty}</td>
-                      <td className="px-4 py-2 text-right">₹{stock.purchasePrice}</td>
-                      <td className="px-4 py-2 text-right">₹{investment.toFixed(2)}</td>
-                      <td className="px-4 py-2 text-right text-blue-600">₹{cmp.toFixed(2)}</td>
-                      <td className="px-4 py-2 text-right">₹{present.toFixed(2)}</td>
-                      <td className={`px-4 py-2 text-right font-medium ${gain >= 0 ? "text-green-600" : "text-red-600"}`}>
+                      <td className="px-4 py-2 text-right">
+                        ₹{stock.purchasePrice}
+                      </td>
+                      <td className="px-4 py-2 text-right">
+                        ₹{investment.toFixed(2)}
+                      </td>
+                      <td className="px-4 py-2 text-right text-blue-600">
+                        ₹{cmp.toFixed(2)}
+                      </td>
+                      <td className="px-4 py-2 text-right">
+                        ₹{present.toFixed(2)}
+                      </td>
+                      <td
+                        className={`px-4 py-2 text-right font-medium ${
+                          gain >= 0 ? "text-green-600" : "text-red-600"
+                        }`}
+                      >
                         ₹{gain.toFixed(2)}
                       </td>
                       <td className="px-4 py-2 text-center">{live?.peRatio}</td>
-                      <td className="px-4 py-2 text-center">{live?.latestEarnings}</td>
+                      <td className="px-4 py-2 text-center">
+                        {live?.latestEarnings}
+                      </td>
                       <td className="px-4 py-2 text-right">{percent}%</td>
                     </tr>
                   );
